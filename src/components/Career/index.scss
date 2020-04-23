@@ -1,0 +1,25 @@
+.career-wrap {
+    padding: 72px 0;
+    .career {
+        display: flex;
+    }
+    .career-pic {
+        flex: 1;
+        margin-right: 120px;
+        img {
+            max-width: 100%;
+        }
+    }
+    .career-text {
+        flex: 1;
+        .article {
+            color: #74757f;
+            font-size: 16px;
+            line-height: 1.5;
+            text-align: left;
+        }
+        .param {
+            margin-bottom: 20px;
+        }
+    }
+}

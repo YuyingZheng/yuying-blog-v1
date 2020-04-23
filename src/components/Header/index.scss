@@ -1,0 +1,68 @@
+.header {
+    // border-bottom: 1px solid transparent;
+}
+
+.nav-aside-inner {
+    height: 90px;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo-wraper {
+        height: 60px;
+        margin-left: -13px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .app-logo {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    .signature {
+        font-family: "Devitos";
+        width: 100%;
+        font-size: 18px;
+        line-height: 1.5;
+        color: #74757f;
+        letter-spacing: 1px;
+        word-spacing: 4px;
+        text-align: right;
+    }
+}
+
+.nav-main-outer {
+    background: #f5f6fa;
+}
+
+.nav-main-inner {
+    position: relative;
+    padding: 16px 0;
+    display: flex;
+    justify-content: space-between;
+    .nav {
+        display: inline-flex;
+        flex: 2;
+        justify-content: space-between;
+        a {
+            font-size: 18px;
+            font-weight: 500;
+            color: #666666;
+            background: transparent;
+            transition: .25s;
+            position: relative;
+            display: inline-block;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            cursor: pointer;
+            &:active,
+            &:hover {
+                color: #0095D9;
+            }
+        }
+    }
+    .sign {
+        flex: 2;
+        text-align: right;
+    }
+}
