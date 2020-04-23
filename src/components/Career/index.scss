@@ -1,17 +1,18 @@
 .career-wrap {
-    padding: 72px 0;
+    padding: 1.2rem 0;
     .career {
         display: flex;
     }
     .career-pic {
         flex: 1;
-        margin-right: 120px;
+        margin-right: .8rem;
         img {
             max-width: 100%;
         }
     }
     .career-text {
         flex: 1;
+        padding: 0 .22rem;
         .article {
             color: #74757f;
             font-size: 16px;
@@ -20,6 +21,26 @@
         }
         .param {
             margin-bottom: 20px;
+        }
+        .button-wrap {
+            margin-top: 35px;
+        }
+    }
+}
+
+@media (max-width: 995px) {
+    .career-wrap {
+        padding: .72rem 0;
+        .career {
+            flex-direction: column;
+        }
+        .career-pic {
+            order: 2;
+            margin-right: 0;
+            margin-top: .36rem;
+        }
+        .career-text {
+            order: 1;
         }
     }
 }
