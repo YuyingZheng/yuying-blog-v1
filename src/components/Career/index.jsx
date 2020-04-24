@@ -8,7 +8,7 @@ const subTitle = 'A Few Words About Career',
 
 const Career = () => {
     return (
-        <div className="career-wrap">
+        <div className="career-wrap section">
             <div className="career global-width">
                 <div className="career-pic">
                     <img src={careerPic} alt="careerPic" />

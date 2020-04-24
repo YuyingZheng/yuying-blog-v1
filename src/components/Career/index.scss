@@ -1,5 +1,4 @@
 .career-wrap {
-    padding: .9rem 0;
     .career {
         display: flex;
     }
@@ -30,7 +29,6 @@
 
 @media (max-width: 995px) {
     .career-wrap {
-        padding: .42rem 0;
         .career {
             flex-direction: column;
         }

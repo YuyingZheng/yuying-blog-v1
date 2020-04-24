@@ -32,7 +32,7 @@ code {
 }
 
 .sub-title {
-    font-family: "Devitos";
+    font-family: 'Solomon';
     font-size: .36rem;
     line-height: 1.33333;
     color: #0b1313;
@@ -61,5 +61,14 @@ code {
     &.max {
         padding-left: 55px;
         padding-right: 55px;
+    }
+}
+
+.section {
+    margin-top: .9rem;
+    margin-bottom: .9rem;
+    @media (max-width: 995px) {
+        margin-top: .4rem;
+        margin-bottom: .4rem;
     }
 }
