@@ -1,8 +1,12 @@
 .swiper-container {
     position: relative;
-    height: 780px;
+    // height: 780px;
     .swiper-slide {
         transition: all 0ms ease 0s;
+        height: auto;
+        img {
+            max-width: 100%;
+        }
     }
     .swiper-button-next,
     .swiper-button-prev {

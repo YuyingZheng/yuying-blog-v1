@@ -1,0 +1,17 @@
+.show-mobile {
+    @media (max-width: 995px) {
+        display: block !important;
+    }
+    @media (min-width: 996px) {
+        display: none !important;
+    }
+}
+
+.show-pc {
+    @media (min-width: 996px) {
+        display: block !important;
+    }
+    @media (max-width: 995px) {
+        display: none !important;
+    }
+}

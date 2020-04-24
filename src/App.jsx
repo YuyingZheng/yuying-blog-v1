@@ -4,6 +4,7 @@ import './App.css';
 import Header from './components/Header';
 import Main from './components/Main';
 import Career from './components/Career';
+import Skills from './components/Skills';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
       </Header>
       <Main />
       <Career />
-
+      <Skills />
     </div>
   );
 }

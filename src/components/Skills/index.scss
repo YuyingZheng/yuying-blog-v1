@@ -1,0 +1,48 @@
+.skills {
+    margin-top: 0;
+    .skill-item {
+        display: inline-block;
+        width: 23%;
+        margin: .03rem;
+        background: #ffffff;
+        padding: 20px 20px 20px 20px;
+        border-radius: 4px;
+        height: 300px;
+        float: left;
+        &:hover {
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+        }
+        .img-wrap {
+            margin-bottom: 0;
+            margin-top: 0;
+            .icon {
+                display: inline-block;
+                width: .6rem;
+                height: .62rem;
+                img {
+                    max-width: 100%;
+                }
+            }
+        }
+        .desc-title {
+            color: #222222;
+            font-family: 'DIN Condensed';
+            font-size: 16px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-align: center;
+            margin: .15rem 0;
+        }
+        .desc {
+            color: #4c4d4f;
+            font-family: 'Solomon';
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: none;
+            line-height: 29px;
+            letter-spacing: 1.6px;
+            text-align: center;
+        }
+    }
+}
