@@ -11,7 +11,7 @@ const navArr = [
     { label: 'CONTACT',href: "/contact" }
 ]
 
-const signature = 'The day will become simple and beautiful as long as we grow towards the sun, '
+const signature = 'The day will become simple and beautiful as long as we grow towards the sun. '
 const menuText = ''
 
 const Header = () => {
