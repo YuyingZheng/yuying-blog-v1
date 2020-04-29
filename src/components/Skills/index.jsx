@@ -36,8 +36,8 @@ const Skills = () => {
                                     <img src={item.icon} alt={item.desc} />
                                 </span>
                             </p>
-                            <h6 class="desc-title">{item.name}</h6>
-                            <p class="desc">
+                            <h6 className="desc-title">{item.name}</h6>
+                            <p className="desc">
                                 {item.desc}
                             </p>
                         </li>)

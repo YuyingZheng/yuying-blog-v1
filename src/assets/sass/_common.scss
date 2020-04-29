@@ -37,7 +37,11 @@ code {
     line-height: 1.33333;
     color: #0b1313;
     margin-top: 0;
+    margin-bottom: .8rem;
     letter-spacing: 1px;
+    @media (max-width: 768px) {
+        margin-top: .8rem;
+    }
 }
 
 .button {
@@ -67,6 +71,9 @@ code {
 .section {
     margin-top: .9rem;
     margin-bottom: .9rem;
+    &:last-of-type {
+        margin-bottom: .4rem;
+    }
     @media (max-width: 995px) {
         margin-top: .4rem;
         margin-bottom: .4rem;

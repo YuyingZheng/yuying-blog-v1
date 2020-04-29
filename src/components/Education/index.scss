@@ -1,0 +1,126 @@
+$title-background: #3d9e67;
+$background-color: #ffffff;
+$content-background-color: #7acaef;
+$content-background-gradient: #7acaef;
+$time-color: #fff;
+$text-color: #fff;
+$content-width: 380px;
+.timeline {
+    color: $text-color;
+    ul {
+        // background: $background-color;
+        margin: 0;
+        li {
+            background: $content-background-color;
+            position: relative;
+            margin: 0 auto;
+            width: 5px;
+            padding-bottom: 40px;
+            list-style-type: none;
+            &:last-child {
+                padding-bottom: 7px;
+            }
+            &:before {
+                content: '';
+                background: $background-color;
+                position: absolute;
+                left: 50%;
+                top: 0;
+                transform: translateX(-50%);
+                -webkit-transform: translateX(-50%);
+                width: 14px;
+                height: 14px;
+                border: 3px solid $content-background-color;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                border-radius: 50%;
+            }
+            .hidden {
+                opacity: 0;
+            }
+            .content {
+                background: $content-background-color;
+                position: relative;
+                top: 7px;
+                width: $content-width;
+                padding: 10px;
+                h6 {
+                    color: $time-color;
+                    padding-bottom: .01rem;
+                    text-align: center;
+                    font-size: .14rem;
+                    margin: .2rem;
+                }
+                p {
+                    text-align: center;
+                    font-size: .16rem;
+                }
+                &:before {
+                    content: '';
+                    background: $content-background-color;
+                    position: absolute;
+                    top: 0px;
+                    width: 38px;
+                    height: 5px;
+                }
+            }
+            &:nth-child(odd) .content {
+                left: 50px;
+                background: $content-background-color;
+                background: -webkit-linear-gradient(-45deg, $content-background-gradient, $content-background-color);
+                background: linear-gradient(-45deg, $content-background-gradient, $content-background-color);
+            }
+            &:nth-child(odd) .content:before {
+                left: -38px;
+            }
+            &:nth-child(even) .content {
+                left: calc(-#{$content-width} - 45px);
+                background: $content-background-color;
+                background: -webkit-linear-gradient(45deg, $content-background-gradient, $content-background-color);
+                background: linear-gradient(45deg, $content-background-gradient, $content-background-color);
+            }
+            &:nth-child(even) .content:before {
+                right: -38px;
+            }
+        }
+    }
+}
+
+
+/* -------------------------
+   ----- Media Queries ----- 
+   ------------------------- */
+
+@media screen and (max-width: 1020px) {
+    .timeline ul {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .timeline ul li .content {
+        width: 41vw;
+    }
+    .timeline ul li:nth-child(even) .content {
+        left: calc(-41vw - 45px);
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .timeline ul li {
+        margin-left: 20px;
+        .content {
+            width: calc(100vw - 100px);
+            h2 {
+                text-align: initial;
+            }
+        }
+        &:nth-child(even) .content {
+            left: 45px;
+            background: $content-background-color;
+            background: -webkit-linear-gradient(-45deg, $content-background-gradient, $content-background-color);
+            background: linear-gradient(-45deg, $content-background-gradient, $content-background-color);
+        }
+        &:nth-child(even) .content:before {
+            left: -33px;
+        }
+    }
+}

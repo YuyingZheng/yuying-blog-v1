@@ -19,7 +19,7 @@ const Header = () => {
         <div className="header">
             <div className="nav-aside-outer">
                 <div className="nav-aside-inner global-width">
-                    <button class="nav-toggle show-mobile">
+                    <button className="nav-toggle show-mobile">
                         <span></span>
                     </button>
                     <h1 className="logo-wraper" href="/">
@@ -48,20 +48,20 @@ const Header = () => {
             <div className="nav-bar-warp-mobile show-mobile">
                 <div className="nav-bar-mobile">
                     <ul className="nav">
-                        <li class="nav-item">
-                            <a href="" class="nav-link">HOME</a>
+                        <li className="nav-item">
+                            <a href="" className="nav-link">HOME</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link">EDUCATION</a>
+                        <li className="nav-item">
+                            <a href="" className="nav-link">EDUCATION</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link">CAREER</a>
+                        <li className="nav-item">
+                            <a href="" className="nav-link">CAREER</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link">HOBBY</a>
+                        <li className="nav-item">
+                            <a href="" className="nav-link">HOBBY</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link">CONTACT</a>
+                        <li className="nav-item">
+                            <a href="" className="nav-link">CONTACT</a>
                         </li>
                     </ul>
                 </div>

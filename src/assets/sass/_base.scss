@@ -1,0 +1,121 @@
+// Html
+// font-size:625% => 1rem = 100px
+article,
+aside,
+dialog,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+    display: block;
+}
+
+[tabindex="-1"]:focus {
+    outline: 0 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+address {
+    margin-bottom: 1rem;
+    font-style: normal;
+    line-height: inherit;
+}
+
+ol,
+ul,
+dl {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+ul li {
+    list-style: none;
+}
+
+dt {
+    font-weight: 700;
+}
+
+dd {
+    margin-bottom: .05rem;
+    margin-left: 0;
+}
+
+blockquote {
+    margin: 0 0 1rem;
+}
+
+dfn {
+    font-style: italic;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+i {
+    font-style: normal;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+hr {
+    box-sizing: content-box;
+    height: 1px;
+    overflow: visible;
+    border: none;
+    margin: 0;
+}
+
+input,
+button,
+select,
+textarea {
+    outline: none;
+    resize: vertical;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button;
+    background: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
