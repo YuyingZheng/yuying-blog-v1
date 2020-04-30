@@ -16,7 +16,7 @@ const Education = () => {
             <ul>
                 {
                     educationArr.map(item=>{
-                       return <li>
+                       return <li key={item.major.toString()}>
                         <div className="content">
                             <h6>
                                 TIME：<time>{item.time}</time>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header';
@@ -8,10 +8,16 @@ import Skills from './components/Skills';
 import Education from './components/Education';
 import Footer from './components/Footer';
 
+
+
+
+
+
 function App() {
+ 
   return (
     <div className="App">
-      <Header className="App-header">
+      <Header className="Header-app">
         <img src={logo} className="App-logo" alt="logo" />
       </Header>
       <Main />
@@ -24,3 +30,5 @@ function App() {
 }
 
 export default App;
+
+

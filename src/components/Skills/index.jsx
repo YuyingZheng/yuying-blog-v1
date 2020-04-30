@@ -30,7 +30,7 @@ const Skills = () => {
             <ul className="skills global-width">
                 {skillArr.map(item => {
                     return (
-                        <li className="skill-item">
+                        <li className="skill-item" key={item.name.toString()}>
                             <p className="img-wrap">
                                 <span className="icon icon-html">
                                     <img src={item.icon} alt={item.desc} />

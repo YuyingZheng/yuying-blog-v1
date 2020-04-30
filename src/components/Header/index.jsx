@@ -1,6 +1,6 @@
 import Logo from './images/logo.png'
 import './index.scss'
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { BrowserRouter as Link } from 'react-router-dom'
 
 const navArr = [
@@ -14,9 +14,38 @@ const navArr = [
 const signature = 'The day will become simple and beautiful as long as we grow towards the sun. '
 const menuText = ''
 
+
+
 const Header = () => {
+
+    let [ fixedHeader, setFixedHeader ] = useState(false)
+
+
+    useEffect(() => {
+      const bindScroll = function () {
+        // debugger
+        if(document.documentElement.scrollTop > 0 || document.body.scrollTop > 0) {
+            setFixedHeader(true);
+        } else {
+            setFixedHeader(false);
+        }
+      }
+  
+      window.addEventListener('scroll',bindScroll.bind(this));
+  
+      return ()=>{
+        window.removeEventListener('resize', bindScroll)
+      }
+
+    })
+
+    function scrollMoothTo (index) {
+    //   debugger
+       return console.log(index);
+    }
+
     return (
-        <div className="header">
+        <div className={["header",fixedHeader ? "fixed" : null ].join(' ')}>
             <div className="nav-aside-outer">
                 <div className="nav-aside-inner global-width">
                     <button className="nav-toggle show-mobile">
@@ -34,9 +63,9 @@ const Header = () => {
                 <div className="nav-main-inner global-width">
 
                     <nav className="nav">
-                        {navArr.map(item => {
-                            return <Link href={item.href}>
-                                <a>{item.label}</a>
+                        {navArr.map((item, index) => {
+                            return <Link href={item.href} key={item.label.toString()}>
+                                <a onClick={()=>scrollMoothTo(index)}>{item.label}</a>
                             </Link>
                         })}
                     </nav>

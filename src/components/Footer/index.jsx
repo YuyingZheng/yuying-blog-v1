@@ -41,7 +41,7 @@ const Footer = ()=>{
                     {
                         contactInfo.map(item=>{
                             return (
-                            <li className="icon-item">
+                            <li className="icon-item" key={item.title.toString()}>
                                 <h6 className="title">{item.title}</h6>
                                 <div className="desc"><span className="icon icon-phone"><img src={item.icon} alt="" title={item.desc}/></span><span className="text">{item.desc}</span></div>
                             </li> )
@@ -57,7 +57,7 @@ const Footer = ()=>{
                 {
                     socialIcons.map(item=>{
                         return (
-                            <li className="icon icon-twitter">
+                            <li className="icon icon-twitter" key={item.name.toString()}>
                             <img src={item.icon} alt="" title={item.name}/>
                             </li>
                         )
