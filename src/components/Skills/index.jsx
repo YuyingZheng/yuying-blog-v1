@@ -25,7 +25,7 @@ const skillArr = [
 
 const Skills = () => {
     return (
-        <div className="skills-wrap section clearfix">
+        <div className="skills-wrap section clearfix" id="skills-wrap">
             <h2 className="sub-title">MY TECHNOLOGY SKILLS</h2>
             <ul className="skills global-width">
                 {skillArr.map(item => {

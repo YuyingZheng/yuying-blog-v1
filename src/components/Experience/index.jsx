@@ -4,7 +4,7 @@ import React from 'react'
 
 const Experience = () => {
     return (
-        <div className="work-experience section">
+        <div className="work-experience section" id="work-wrap">
             <div className="experience global-width">
                 <div className="sub-title">work experience</div>
                 <div className="">

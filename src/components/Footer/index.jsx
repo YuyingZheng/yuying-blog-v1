@@ -28,7 +28,7 @@ const contactInfo = [
 const Footer = ()=>{
    return (
        <div className="footer-wrap section">
-          <div className="personal-info-wrap">
+          <div className="personal-info-wrap" id="contact-wrap">
            <div className="global-width personal-info">
                
                 <div className="personal-img">

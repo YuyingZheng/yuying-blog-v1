@@ -4,11 +4,11 @@ import React, {useState, useEffect} from 'react'
 import { BrowserRouter as Link } from 'react-router-dom'
 
 const navArr = [
-    { label: 'HOME',href: "/home" },
-    { label: 'EDUCATION',href: "/eductaion" },
-    { label: 'CAREER',href: "/career" },
-    { label: 'HOBBY',href: "/hobby" },
-    { label: 'CONTACT',href: "/contact" }
+    { label: 'HOME',href: "/home", id: 'home-wrap' },
+    { label: 'CAREER',href: "/career" , id: 'career-wrap'},
+    { label: 'SKILLS',href: "/skills", id: 'skills-wrap' },
+    { label: 'EDUCATION',href: "/eductaion", id: 'education-wrap' },
+    { label: 'CONTACT',href: "/contact", id: 'contact-wrap'}
 ]
 
 const signature = 'The day will become simple and beautiful as long as we grow towards the sun. '
@@ -44,6 +44,16 @@ const Header = () => {
        return console.log(index);
     }
 
+    const scrollToAnchor = (anchorName) => {
+        // debugger
+        if(anchorName) {
+            let anchorElement = document.getElementById(anchorName)
+            if(anchorElement) { anchorElement.scrollIntoView({block: 'start', behavior: 'smooth'})}
+
+            
+        }
+    }
+
     return (
         <div className={["header",fixedHeader ? "fixed" : null ].join(' ')}>
             <div className="nav-aside-outer">
@@ -65,7 +75,7 @@ const Header = () => {
                     <nav className="nav">
                         {navArr.map((item, index) => {
                             return <Link href={item.href} key={item.label.toString()}>
-                                <a onClick={()=>scrollMoothTo(index)}>{item.label}</a>
+                                <a onClick={()=>scrollToAnchor(item.id)}>{item.label}</a>
                             </Link>
                         })}
                     </nav>

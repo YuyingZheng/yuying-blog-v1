@@ -10,7 +10,7 @@ const educationArr = [
 
 const Education = () => {
     return (
-        <div className="eduction-wrap section">
+        <div className="eduction-wrap section" id="education-wrap">
         <h2 className="sub-title">EDUCATION EXPERIENCE</h2>
           <div className="education timeline global-width">
             <ul>

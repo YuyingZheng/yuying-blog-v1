@@ -1,0 +1,150 @@
+html, 
+body,
+#root,
+.App {
+  height: 100%;
+}
+
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.App {
+  position: relative;
+
+  &::before,
+  &::after {
+     position: absolute;
+     left: 0;
+     top: 0;
+     content: '';
+     background: #ffffff;
+     height: 50%;
+     width: 100%;
+     z-index: 99999;
+  }
+
+  &::before {
+    animation: 5s animaation-shrink-wihte-bg 1s  1 ease-in-out forwards;
+  }
+
+  &::after {
+    top: initial;
+    bottom: 0;
+    animation: 5s animaation-shrink-wihte-bg-bottom 1s 1 ease-in-out forwards;
+  }
+}
+
+.spinner-line {
+  width: 100%;
+  height: 5px;
+  position: relative;
+  top: 34%;
+  
+  > p {
+      width: 20%;
+      background: #0095D9;
+      height: 100%;
+      animation: 2s animation-spinner-line infinite ease-in-out;
+  }
+}
+
+.loading-layer {
+  height: 100%;
+  
+  .loading-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 32%;
+    position: relative;
+  }
+
+  .logo {
+    display: inline-block;
+    width: 300px;
+
+    img {
+      max-width: 100%;
+      max-height: 100%
+    }
+  }
+
+  .signature {
+    font-size: 24px;
+    margin-top: 12px;
+  }
+}
+
+@keyframes animaation-shrink-wihte-bg {
+  0% {
+     height: 50%;
+  }
+  100% {
+     height: 0;
+  }
+}
+
+@keyframes animaation-shrink-wihte-bg-bottom {
+  0% {
+     height: 50%;
+  }
+
+  100% {
+     height: 0;
+  }
+}
+
+@keyframes animation-spinner-line {
+0% {
+   width: 10%;
+}
+30% {
+    width: 30%;
+}
+60% {
+    width: 80%;
+}
+80% {
+    width: 100%;
+}
+100% {
+    width: 0;
+}
+}

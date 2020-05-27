@@ -43,13 +43,13 @@ $content-width: 380px;
                 position: relative;
                 top: 7px;
                 width: $content-width;
-                padding: 10px;
+                padding: 20px 10px;
                 h6 {
                     color: $time-color;
                     padding-bottom: .01rem;
                     text-align: center;
                     font-size: .14rem;
-                    margin: .2rem;
+                    margin: .05rem .2rem .15rem;
                 }
                 p {
                     text-align: center;
