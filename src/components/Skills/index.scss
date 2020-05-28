@@ -1,5 +1,6 @@
 .skills {
     margin-top: 0;
+    overflow: hidden;
     .skill-item {
         display: inline-block;
         width: 23%;
@@ -9,6 +10,9 @@
         border-radius: 4px;
         height: 300px;
         float: left;
+        overflow: hidden;
+        transform: translate3d(-50%, 0, 0);
+
         @media (max-width: 995px) {
             width: 46%;
             height: 260px;
@@ -49,4 +53,19 @@
             text-align: center;
         }
     }
+}
+
+.slideToLeft {
+    animation: 1s slideToLeft ease-in forwards;
+}
+
+@keyframes slideToLeft {
+	0% {
+		transform: translate3d(-50%, 0, 0);
+        opacity: 1;
+	}
+	100% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+	}
 }

@@ -44,6 +44,7 @@ $content-width: 380px;
                 top: 7px;
                 width: $content-width;
                 padding: 20px 10px;
+                transform: translate3d(0, -50%, 0);
                 h6 {
                     color: $time-color;
                     padding-bottom: .01rem;
@@ -123,4 +124,19 @@ $content-width: 380px;
             left: -33px;
         }
     }
+}
+
+.slideToBottom {
+    animation: 1s slideToBottom ease-in forwards;
+}
+
+@keyframes slideToBottom {
+	0% {
+		transform: translate3d(0, -50%, 0);
+        opacity: 1;
+	}
+	100% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+	}
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import './index.scss'
 import facebookIcon from './images/facebook.svg'
 import twitterIcon from './images/twitter.svg'
@@ -26,12 +26,29 @@ const contactInfo = [
 ]
 
 const Footer = ()=>{
+    let [ slideToLeft, setSlideToLeft ] = useState(false)
+       
+
+    useEffect(() => {
+        let slideToLeft = false
+        const contactWrap = document.getElementById('contact-wrap')
+        
+        const bindScroll = function () {
+        let  scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+          if(scrollTop + document.body.offsetHeight >= contactWrap.offsetTop + 200) {
+            setSlideToLeft(true)
+          }
+        }
+    
+        window.addEventListener('scroll',bindScroll);
+    })
+
    return (
        <div className="footer-wrap section">
           <div className="personal-info-wrap" id="contact-wrap">
            <div className="global-width personal-info">
                
-                <div className="personal-img">
+                <div className={["personal-img",slideToLeft ? "slideToLeft" : null ].join(' ')}>
                   <div className="img-box">
                    <img src={personalImg} alt=""/>
                   </div>

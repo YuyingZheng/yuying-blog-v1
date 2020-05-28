@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import './index.scss'
 
 import htmlIcon from './images/html.svg'
@@ -24,13 +24,29 @@ const skillArr = [
 ]
 
 const Skills = () => {
+    let [ slideToLeft, setSlideToLeft ] = useState(false)
+
+    useEffect(() => {
+        let slideToLeft = false
+        const skillsWrap = document.getElementById('skills-wrap')
+        
+        const bindScroll = function () {
+        let  scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+          if(scrollTop + document.body.offsetHeight >= skillsWrap.offsetTop + 200) {
+            setSlideToLeft(true)
+          }
+        }
+    
+        window.addEventListener('scroll',bindScroll);
+    })
+
     return (
         <div className="skills-wrap section clearfix" id="skills-wrap">
             <h2 className="sub-title">MY TECHNOLOGY SKILLS</h2>
-            <ul className="skills global-width">
+            <ul className="skills global-width clearfix">
                 {skillArr.map(item => {
                     return (
-                        <li className="skill-item" key={item.name.toString()}>
+                        <li key={item.name.toString()}  className={["skill-item",slideToLeft ? "slideToLeft" : null ].join(' ')}>
                             <p className="img-wrap">
                                 <span className="icon icon-html">
                                     <img src={item.icon} alt={item.desc} />
