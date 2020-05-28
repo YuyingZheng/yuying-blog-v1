@@ -12,9 +12,9 @@ import personalImg  from './images/sunflower.jpg'
 
 
 const socialIcons = [
-    {name: 'twitter', icon: twitterIcon, desc: 'twitter'},
-    {name: 'facebook', icon: facebookIcon, desc: 'facebook'},
-    {name: 'git', icon: gitIcon, desc: 'twitter'},
+    {name: 'twitter', icon: twitterIcon, desc: 'twitter', url: 'https://twitter.com'},
+    {name: 'facebook', icon: facebookIcon, desc: 'facebook', url: "https://www.facebook.com/"},
+    {name: 'git', icon: gitIcon, desc: 'git', url: "https://github.com/"},
     {name: 'qq', icon: qqIcon, desc: 'qq'},
     {name: 'wechat', icon: wechatIcon, desc: 'wechat'}
 ]
@@ -42,6 +42,10 @@ const Footer = ()=>{
     
         window.addEventListener('scroll',bindScroll);
     })
+
+    const goPage = function (url) {
+      window.open(url, '_blank')
+    }
 
    return (
        <div className="footer-wrap section">
@@ -74,8 +78,10 @@ const Footer = ()=>{
                 {
                     socialIcons.map(item=>{
                         return (
-                            <li className="icon icon-twitter" key={item.name.toString()}>
-                            <img src={item.icon} alt="" title={item.name}/>
+                            <li>
+                              <a className="icon icon-twitter" key={item.name.toString()} onClick={goPage.bind(this, item.url)}>
+                                <img src={item.icon} alt="" title={item.name}/>
+                              </a>
                             </li>
                         )
                     })

@@ -92,6 +92,10 @@
             width: 100%;
             justify-content: space-evenly;
             margin-top: .2rem;
+
+            .icon {
+                cursor: pointer;
+            }
         }
     }
 }
