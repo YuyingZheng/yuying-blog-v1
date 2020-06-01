@@ -3,8 +3,8 @@ import careerPic from './images/career.jpg'
 import './index.scss'
 
 const subTitle = 'A Few Words About Career',
-    paramOne = 'COST Accountant was founded in 1995 and since that time has grown into the largest CPA firm in the area. We are an assertive firm providing our clients a full range of services.',
-    paramTwo = 'COST Accountant was founded in 1995 and since that time has grown into the largest CPA firm in the area. We are an assertive firm providing our clients a full range of services.';
+    paramOne = 'Work as a quality assaurance in Yardi, a IT company, i mainly responsible for software quality. Writting test cases and automation testing script to verify software quality.',
+    paramTwo = 'I make job transform to a front end developer in Yardi, then i step into creating industry. From the begining, i work as a htmler,which in charger of html and css in project; Next....';
 
 const Career = () => {
         let [ slideToLeft, setSlideToLeft ] = useState(false)

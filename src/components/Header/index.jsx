@@ -19,6 +19,7 @@ const menuText = ''
 const Header = () => {
 
     let [ fixedHeader, setFixedHeader ] = useState(false)
+    let [ meunAcitve, setMenuActive ] = useState(false)
 
 
     useEffect(() => {
@@ -58,7 +59,8 @@ const Header = () => {
         <div className={["header",fixedHeader ? "fixed" : null ].join(' ')}>
             <div className="nav-aside-outer">
                 <div className="nav-aside-inner global-width">
-                    <button className="nav-toggle show-mobile">
+                    <button className={["nav-toggle show-mobile", meunAcitve ? "menu-active" : null ].join(' ')}
+                     onClick={()=>setMenuActive(!meunAcitve)}>
                         <span></span>
                     </button>
                     <h1 className="logo-wraper" href="/">
@@ -84,27 +86,26 @@ const Header = () => {
                 </div>
             </div>
 
-            <div className="nav-bar-warp-mobile show-mobile">
-                <div className="nav-bar-mobile">
-                    <ul className="nav">
-                        <li className="nav-item">
-                            <a href="" className="nav-link">HOME</a>
-                        </li>
-                        <li className="nav-item">
-                            <a href="" className="nav-link">EDUCATION</a>
-                        </li>
-                        <li className="nav-item">
-                            <a href="" className="nav-link">CAREER</a>
-                        </li>
-                        <li className="nav-item">
-                            <a href="" className="nav-link">HOBBY</a>
-                        </li>
-                        <li className="nav-item">
-                            <a href="" className="nav-link">CONTACT</a>
-                        </li>
-                    </ul>
-                </div>
+            <div className={["nav-bar-warp-mobile show-mobile", meunAcitve ? "menu-active" : null ].join(' ')}>
+               <div className="layer-bg">
+                 <div></div>
+                 <div></div>
+                 <div></div>
+                 <div></div>
+                 <div></div>
+               </div>
+               <div className="layer-content">
+                 <div className="nav-menu">
+                   {navArr.map((item, index) => {
+                        return <Link href={item.href} key={item.label.toString()}>
+                            <a onClick={()=>scrollToAnchor(item.id)}>{item.label}</a>
+                        </Link>
+                    })}
+                 </div>
+               </div>
             </div>
+
+            
         </div>)
 }
 
