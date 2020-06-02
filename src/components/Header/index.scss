@@ -3,14 +3,12 @@
 }
 
 .nav-aside-inner {
-    height: 90px;
-    // padding-left: 15px;
-    // padding-right: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     @media(max-width: 995px) {
         justify-content: inherit;
+        height: 90px;
     }
     .logo-wraper {
         height: 60px;
@@ -140,54 +138,10 @@
     }
     .sign {
         flex: 2;
-        text-align: right;
+        display: inline-flex;
+        flex-flow: row-reverse;
     }
 }
-
-// .nav-bar-warp-mobile {
-//     position: fixed;
-//     z-index: 1078;
-//     left: 0;
-//     top: 91px;
-//     bottom: -56px;
-//     z-index: 1079;
-//     width: 270px;
-//     padding: 112px 0 81px;
-//     overflow-y: auto;
-//     overflow-x: hidden;
-//     -webkit-overflow-scrolling: touch;
-//     font-size: 14px;
-//     line-height: 34px;
-//     transform: translateX(-110%);
-//     color: #fff;
-//     background: #fff;
-//     border-right: 1px solid #e8e9ee;
-//     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.05);
-//     &.active {
-//         transform: translateX(0);
-//     }
-//     .nav {
-//         display: block;
-//         margin: 15px 0;
-//         height: auto;
-//         text-align: left;
-//         transition: 0.35s all cubic-bezier(0.65, 0.05, 0.36, 1);
-//     }
-//     .nav-item {
-//         text-align: left;
-//         .nav-link {
-//             color: #2d3742;
-//             display: block;
-//             padding: 14px 56px 14px 18px;
-//             letter-spacing: .08em;
-//             text-transform: uppercase;
-//         }
-//         &.active {
-//             color: #fff;
-//             background: #0095D9;
-//         }
-//     }
-// }
 
 .header {
     position: relative;
@@ -205,6 +159,17 @@
         }
         
     }
+}
+
+.lang-switch {
+    width: 100px;
+    height: 40px;
+    border-radius: 25px;
+    border: solid 1px #0095D9;
+    display: flex;
+    justify-content: center;
+    transition-duration: .2s;
+    font-size: 20px;
 }
 
 @media (max-width: 996px) {

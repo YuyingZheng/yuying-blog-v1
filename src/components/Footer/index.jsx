@@ -27,8 +27,7 @@ const contactInfo = [
 
 const Footer = ()=>{
     let [ slideToLeft, setSlideToLeft ] = useState(false)
-       
-
+    
     useEffect(() => {
         let slideToLeft = false
         const contactWrap = document.getElementById('contact-wrap')

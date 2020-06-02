@@ -10,12 +10,15 @@ import Education from './components/Education';
 import Footer from './components/Footer';
 // import Loading from './components/Loading';
 import { scrollToTriggerAimation } from './utili/scrollAnimation.js'
+import { IntlProvider } from 'react-intl';
+import zh_CN from './locales/zh-CN';
+import en_US from './locales/en-US';
 
 const signature = 'The day will become simple and beautiful as long as we grow towards the sun. '
 
 function App() {
-  window.onscroll = scrollToTriggerAimation('career-pic', 'slideInLeft')
-  
+  window.onscroll = scrollToTriggerAimation('career-pic','slideInLeft')
+
   let [isLoading,setIsLoading] = useState(true)
 
   useEffect(() => {
@@ -26,34 +29,47 @@ function App() {
     }
   })
 
+  const locale = 'zh'
+
+  useEffect(() => {
+    localStorage.setItem('lang',locale);
+  });
+
+  const messages = {
+    zh: zh_CN,
+    en: en_US
+  }
+
+
   return (
-    
-    <div className="App">
-      {
-        isLoading ?
-          <div className="loading-layer">
-            <div className="loading-logo">
-              <a className="logo" href="/">
-                <img src={Logo} className="app-logo" alt="logo" />
-              </a>
 
-              <p className="signature">{signature}</p>
+    <IntlProvider messages={messages[locale]}>
+      <div className="App">
+        {
+          isLoading ?
+            <div className="loading-layer">
+              <div className="loading-logo">
+                <a className="logo" href="/">
+                  <img src={Logo} className="app-logo" alt="logo" />
+                </a>
+
+                <p className="signature">{signature}</p>
+              </div>
+
+              <div className="spinner-line"><p></p></div>
+            </div> : <div>
+              <Header className="Header-app">
+                <img src={logo} className="App-logo" alt="logo" />
+              </Header>
+              <Main />
+              <Career />
+              <Skills />
+              <Education />
+              <Footer />
             </div>
-     
-            <div className="spinner-line"><p></p></div>
-          </div> : <div>
-            <Header className="Header-app">
-              <img src={logo} className="App-logo" alt="logo" />
-            </Header>
-            <Main />
-            <Career />
-            <Skills />
-            <Education />
-            <Footer />
-          </div>
-      }
-
-    </div>
+        }
+      </div>
+    </IntlProvider>
   );
 }
 

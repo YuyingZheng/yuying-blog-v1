@@ -2,6 +2,7 @@ import Logo from './images/logo.png'
 import './index.scss'
 import React, {useState, useEffect} from 'react'
 import { BrowserRouter as Link } from 'react-router-dom'
+import { FormattedMessage } from 'react-intl';
 
 const navArr = [
     { label: 'HOME',href: "/home", id: 'home-wrap' },
@@ -12,17 +13,18 @@ const navArr = [
 ]
 
 const signature = 'The day will become simple and beautiful as long as we grow towards the sun. '
-const menuText = ''
-
-
+const lang="en"
 
 const Header = () => {
 
     let [ fixedHeader, setFixedHeader ] = useState(false)
     let [ meunAcitve, setMenuActive ] = useState(false)
-
+  
 
     useEffect(() => {
+      const toggleLang = function() {
+          
+      }
       const bindScroll = function () {
         // debugger
         if(document.documentElement.scrollTop > 0 || document.body.scrollTop > 0) {
@@ -39,11 +41,6 @@ const Header = () => {
       }
 
     })
-
-    function scrollMoothTo (index) {
-    //   debugger
-       return console.log(index);
-    }
 
     const scrollToAnchor = (anchorName) => {
         // debugger
@@ -67,7 +64,9 @@ const Header = () => {
                         <img src={Logo} className="app-logo" alt="logo" />
                     </h1>
 
-                    <p className="signature show-pc">{signature}</p>
+                    <p className="signature show-pc">
+                      <FormattedMessage id="component.header.signature" />
+                    </p>
                 </div>
             </div>
 
@@ -82,7 +81,7 @@ const Header = () => {
                         })}
                     </nav>
 
-                    <span className="sign arrow">{menuText}</span>
+                    <span className="sign arrow"><a className="lang-switch" onClick={()=>toggleLang()}>{lang}</a></span>
                 </div>
             </div>
 
