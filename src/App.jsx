@@ -9,7 +9,7 @@ import Skills from './components/Skills';
 import Education from './components/Education';
 import Footer from './components/Footer';
 // import Loading from './components/Loading';
-import { scrollToTriggerAimation } from './utili/scrollAnimation.js'
+
 import { IntlProvider } from 'react-intl';
 import zh_CN from './locales/zh-CN';
 import en_US from './locales/en-US';
@@ -17,7 +17,6 @@ import en_US from './locales/en-US';
 const signature = 'The day will become simple and beautiful as long as we grow towards the sun. '
 
 function App() {
-  window.onscroll = scrollToTriggerAimation('career-pic','slideInLeft')
 
   let [isLoading,setIsLoading] = useState(true)
 
@@ -29,10 +28,10 @@ function App() {
     }
   })
 
-  const locale = 'zh'
+  const [locale, setLocale] = useState('zh')
 
   useEffect(() => {
-    localStorage.setItem('lang',locale);
+    localStorage.setItem('lang', locale);
   });
 
   const messages = {
@@ -40,10 +39,15 @@ function App() {
     en: en_US
   }
 
+  const propety = {
+    locale,
+    setLocale,
+  }
+
 
   return (
 
-    <IntlProvider messages={messages[locale]}>
+    <IntlProvider locale="en" messages={messages[locale]}>
       <div className="App">
         {
           isLoading ?
@@ -58,7 +62,7 @@ function App() {
 
               <div className="spinner-line"><p></p></div>
             </div> : <div>
-              <Header className="Header-app">
+              <Header className="Header-app" {...propety}>
                 <img src={logo} className="App-logo" alt="logo" />
               </Header>
               <Main />

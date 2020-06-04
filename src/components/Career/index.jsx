@@ -1,10 +1,12 @@
 import React, {useState, useEffect} from 'react'
 import careerPic from './images/career.jpg'
 import './index.scss'
+import { FormattedMessage } from 'react-intl';
 
-const subTitle = 'A Few Words About Career',
-    paramOne = 'Work as a quality assaurance in Yardi, a IT company, i mainly responsible for software quality. Writting test cases and automation testing script to verify software quality.',
-    paramTwo = 'I make job transform to a front end developer in Yardi, then i step into creating industry. From the begining, i work as a htmler,which in charger of html and css in project; Next....';
+const subTitle = <FormattedMessage id="component.career.title" />,
+    paramOne = <FormattedMessage id="component.career.paramOne" />,
+    paramTwo = <FormattedMessage id="component.career.paramTwo" />,
+    learnMore =  <FormattedMessage id="component.career.learnMore" />;
 
 const Career = () => {
         let [ slideToLeft, setSlideToLeft ] = useState(false)
@@ -36,7 +38,7 @@ const Career = () => {
 
                         <p className="param">{paramTwo}</p>
                         <div className="button-wrap">
-                            <button className="button button-blue max">LEARN MORE</button>
+                            <button className="button button-blue max">{learnMore}</button>
                         </div>
                     </article>
                 </div>

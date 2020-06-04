@@ -1,32 +1,27 @@
 import Logo from './images/logo.png'
+import LangIcon from './images/lang.svg'
 import './index.scss'
 import React, {useState, useEffect} from 'react'
 import { BrowserRouter as Link } from 'react-router-dom'
 import { FormattedMessage } from 'react-intl';
 
 const navArr = [
-    { label: 'HOME',href: "/home", id: 'home-wrap' },
-    { label: 'CAREER',href: "/career" , id: 'career-wrap'},
-    { label: 'SKILLS',href: "/skills", id: 'skills-wrap' },
-    { label: 'EDUCATION',href: "/eductaion", id: 'education-wrap' },
-    { label: 'CONTACT',href: "/contact", id: 'contact-wrap'}
+    { label: <FormattedMessage id="component.nav.label.home" />,href: "/home", id: 'home-wrap' },
+    { label: <FormattedMessage id="component.nav.label.career" />,href: "/career" , id: 'career-wrap'},
+    { label: <FormattedMessage id="component.nav.label.skills" />,href: "/skills", id: 'skills-wrap' },
+    { label: <FormattedMessage id="component.nav.label.education" />,href: "/eductaion", id: 'education-wrap' },
+    { label: <FormattedMessage id="component.nav.label.contact" />,href: "/contact", id: 'contact-wrap'}
 ]
 
-const signature = 'The day will become simple and beautiful as long as we grow towards the sun. '
-const lang="en"
-
-const Header = () => {
+const signature =  <FormattedMessage id="component.header.signature" />
+const Header = ({locale, setLocale}) => {
 
     let [ fixedHeader, setFixedHeader ] = useState(false)
     let [ meunAcitve, setMenuActive ] = useState(false)
-  
+
 
     useEffect(() => {
-      const toggleLang = function() {
-          
-      }
       const bindScroll = function () {
-        // debugger
         if(document.documentElement.scrollTop > 0 || document.body.scrollTop > 0) {
             setFixedHeader(true);
         } else {
@@ -43,7 +38,7 @@ const Header = () => {
     })
 
     const scrollToAnchor = (anchorName) => {
-        // debugger
+
         if(anchorName) {
             let anchorElement = document.getElementById(anchorName)
             if(anchorElement) { anchorElement.scrollIntoView({block: 'start', behavior: 'smooth'})}
@@ -65,7 +60,7 @@ const Header = () => {
                     </h1>
 
                     <p className="signature show-pc">
-                      <FormattedMessage id="component.header.signature" />
+                     {signature}
                     </p>
                 </div>
             </div>
@@ -81,7 +76,14 @@ const Header = () => {
                         })}
                     </nav>
 
-                    <span className="sign arrow"><a className="lang-switch" onClick={()=>toggleLang()}>{lang}</a></span>
+                    <span className="sign arrow">
+                      <a className="lang-switch"
+                         onClick={e=>{e.preventDefault();
+                         setLocale(locale === 'zh' ? 'en': 'zh')}}>
+                         <img src={LangIcon} alt="" className="lang-pic"/>
+                         {locale == 'zh' ? <span className="zh">中文</span> :  <span className="en">en</span>}
+                    </a>
+                    </span>
                 </div>
             </div>
 
