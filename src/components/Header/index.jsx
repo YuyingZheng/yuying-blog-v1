@@ -1,58 +1,58 @@
 import Logo from './images/logo.png'
 import LangIcon from './images/lang.svg'
 import './index.scss'
-import React, {useState, useEffect} from 'react'
+import React,{ useState,useEffect } from 'react'
 import { BrowserRouter as Link } from 'react-router-dom'
 import { FormattedMessage } from 'react-intl';
 
 const navArr = [
-    { label: <FormattedMessage id="component.nav.label.home" />,href: "/home", id: 'home-wrap' },
-    { label: <FormattedMessage id="component.nav.label.career" />,href: "/career" , id: 'career-wrap'},
-    { label: <FormattedMessage id="component.nav.label.skills" />,href: "/skills", id: 'skills-wrap' },
-    { label: <FormattedMessage id="component.nav.label.education" />,href: "/eductaion", id: 'education-wrap' },
-    { label: <FormattedMessage id="component.nav.label.contact" />,href: "/contact", id: 'contact-wrap'}
+    { label: <FormattedMessage id="component.nav.label.home" />,href: "/home",id: 'home-wrap' },
+    { label: <FormattedMessage id="component.nav.label.career" />,href: "/career",id: 'career-wrap' },
+    { label: <FormattedMessage id="component.nav.label.skills" />,href: "/skills",id: 'skills-wrap' },
+    { label: <FormattedMessage id="component.nav.label.education" />,href: "/eductaion",id: 'education-wrap' },
+    { label: <FormattedMessage id="component.nav.label.contact" />,href: "/contact",id: 'contact-wrap' }
 ]
 
-const signature =  <FormattedMessage id="component.header.signature" />
-const Header = ({locale, setLocale}) => {
+const signature = <FormattedMessage id="component.header.signature" />
+const Header = ({ locale,setLocale }) => {
 
-    let [ fixedHeader, setFixedHeader ] = useState(false)
-    let [ meunAcitve, setMenuActive ] = useState(false)
+    let [fixedHeader,setFixedHeader] = useState(false)
+    let [meunAcitve,setMenuActive] = useState(false)
 
 
     useEffect(() => {
-      const bindScroll = function () {
-        if(document.documentElement.scrollTop > 0 || document.body.scrollTop > 0) {
-            setFixedHeader(true);
-        } else {
-            setFixedHeader(false);
+        const bindScroll = function () {
+            if (document.documentElement.scrollTop > 0 || document.body.scrollTop > 0) {
+                setFixedHeader(true);
+            } else {
+                setFixedHeader(false);
+            }
         }
-      }
-  
-      window.addEventListener('scroll',bindScroll.bind(this));
-  
-      return ()=>{
-        window.removeEventListener('resize', bindScroll)
-      }
+
+        window.addEventListener('scroll',bindScroll.bind(this));
+
+        return () => {
+            window.removeEventListener('resize',bindScroll)
+        }
 
     })
 
     const scrollToAnchor = (anchorName) => {
 
-        if(anchorName) {
+        if (anchorName) {
             let anchorElement = document.getElementById(anchorName)
-            if(anchorElement) { anchorElement.scrollIntoView({block: 'start', behavior: 'smooth'})}
+            if (anchorElement) { anchorElement.scrollIntoView({ block: 'start',behavior: 'smooth' }) }
 
-            
+
         }
     }
 
     return (
-        <div className={["header",fixedHeader ? "fixed" : null ].join(' ')}>
+        <div className={["header",fixedHeader ? "fixed" : null].join(' ')}>
             <div className="nav-aside-outer">
                 <div className="nav-aside-inner global-width">
-                    <button className={["nav-toggle show-mobile", meunAcitve ? "menu-active" : null ].join(' ')}
-                     onClick={()=>setMenuActive(!meunAcitve)}>
+                    <button className={["nav-toggle show-mobile",meunAcitve ? "menu-active" : null].join(' ')}
+                        onClick={() => setMenuActive(!meunAcitve)}>
                         <span></span>
                     </button>
                     <h1 className="logo-wraper" href="/">
@@ -60,7 +60,7 @@ const Header = ({locale, setLocale}) => {
                     </h1>
 
                     <p className="signature show-pc">
-                     {signature}
+                        {signature}
                     </p>
                 </div>
             </div>
@@ -69,44 +69,57 @@ const Header = ({locale, setLocale}) => {
                 <div className="nav-main-inner global-width">
 
                     <nav className="nav">
-                        {navArr.map((item, index) => {
+                        {navArr.map((item,index) => {
                             return <Link href={item.href} key={item.label.toString()}>
-                                <a onClick={()=>scrollToAnchor(item.id)}>{item.label}</a>
+                                <a onClick={() => scrollToAnchor(item.id)}>{item.label}</a>
                             </Link>
                         })}
                     </nav>
 
                     <span className="sign arrow">
-                      <a className="lang-switch"
-                         onClick={e=>{e.preventDefault();
-                         setLocale(locale === 'zh' ? 'en': 'zh')}}>
-                         <img src={LangIcon} alt="" className="lang-pic"/>
-                         {locale == 'zh' ? <span className="zh">中文</span> :  <span className="en">en</span>}
-                    </a>
+                        <a className="lang-switch"
+                            onClick={e => {
+                                e.preventDefault();
+                                setLocale(locale === 'zh' ? 'en' : 'zh')
+                            }}>
+                            <img src={LangIcon} alt="" className="lang-pic" />
+                            {locale == 'zh' ? <span className="zh">中文</span> : <span className="en">en</span>}
+                        </a>
                     </span>
                 </div>
             </div>
 
-            <div className={["nav-bar-warp-mobile show-mobile", meunAcitve ? "menu-active" : null ].join(' ')}>
-               <div className="layer-bg">
-                 <div></div>
-                 <div></div>
-                 <div></div>
-                 <div></div>
-                 <div></div>
-               </div>
-               <div className="layer-content">
-                 <div className="nav-menu">
-                   {navArr.map((item, index) => {
-                        return <Link href={item.href} key={item.label.toString()}>
-                            <a onClick={()=>scrollToAnchor(item.id)}>{item.label}</a>
-                        </Link>
-                    })}
-                 </div>
-               </div>
+            <div className={["nav-bar-warp-mobile show-mobile",meunAcitve ? "menu-active" : null].join(' ')}>
+                <div className="layer-bg">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div className="layer-content">
+                    <div className="nav-menu">
+                        {navArr.map((item,index) => {
+                            return <Link href={item.href} key={item.label.toString()}>
+                                <a onClick={() => scrollToAnchor(item.id)}>{item.label}</a>
+                            </Link>
+                        })}
+                    </div>
+
+                    <p className="mobile-lang-switch">
+                        <a className="lang-switch"
+                            onClick={e => {
+                                e.preventDefault();
+                                setLocale(locale === 'zh' ? 'en' : 'zh')
+                            }}>
+                            <img src={LangIcon} alt="" className="lang-pic" />
+                            {locale == 'zh' ? <span className="zh">中文</span> : <span className="en">en</span>}
+                        </a>
+                    </p>
+                </div>
             </div>
 
-            
+
         </div>)
 }
 
