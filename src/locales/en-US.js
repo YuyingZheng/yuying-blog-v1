@@ -28,7 +28,7 @@ const en_US = {
     'component.contact.phone': '19959285169',
     'component.contact.email': '719982185@qq.com',
     'component.contact.address': 'Xiamen Fujian Province',
-    'component.contact.copyright': '郑钰莹©2020. 版权所有',
+    'component.contact.copyright': 'Jady©2020. All rights reserved',
 }
 
 export default en_US;

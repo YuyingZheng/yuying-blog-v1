@@ -27,7 +27,7 @@ const zh_CN = {
     'component.contact.phone': '19959285169',
     'component.contact.email': '719982185@qq.com',
     'component.contact.address': '福建厦门',
-    'component.contact.copyright': 'Jady©2020. All rights reserved',
+    'component.contact.copyright': '郑钰莹©2020. 版权所有',
 }
 
 
