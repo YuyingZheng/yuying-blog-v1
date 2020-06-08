@@ -1,4 +1,4 @@
-import React,{ useState,useEffect } from 'react'
+import React,{ useEffect } from 'react'
 import Swiper from 'swiper';
 import swipeFirst from './images/slider-light-slide-1.jpg'
 import swipeSecond from './images/slider-light-slide-2.jpg'

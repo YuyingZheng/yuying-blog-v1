@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
-import careerPic from './images/career.jpg'
+// import careerPic from './images/career.jpg'
+import careerPic from './images/yy-02.png'
 import './index.scss'
 import { FormattedMessage } from 'react-intl';
 

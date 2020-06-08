@@ -8,7 +8,7 @@ import wechatIcon from './images/wechat.svg'
 import phoneIcon from './images/phone.svg'
 import svgIcon from './images/email.svg'
 import addressIcon from './images/address.svg'
-import personalImg from './images/sunflower.jpg'
+import personalImg from './images/yy-02.png'
 import { FormattedMessage } from 'react-intl';
 
 
@@ -41,7 +41,6 @@ const Footer = () => {
     let [slideToLeft,setSlideToLeft] = useState(false)
 
     useEffect(() => {
-        let slideToLeft = false
         const contactWrap = document.getElementById('contact-wrap')
 
         const bindScroll = function () {
@@ -90,7 +89,7 @@ const Footer = () => {
                             socialIcons.map((item, index) => {
                                 return (
                                     <li key={index}>
-                                        <a className="icon icon-twitter" onClick={goPage.bind(this,item.url)}>
+                                        <a className="icon icon-twitter" onClick={goPage.bind(this,item.url)} href="javascript:;">
                                             <img src={item.icon} alt="" title={item.name} />
                                         </a>
                                     </li>
