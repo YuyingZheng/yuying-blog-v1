@@ -45,8 +45,8 @@ const Education = () => {
             <div className="education timeline global-width">
                 <ul>
                     {
-                        educationArr.map(item => {
-                            return <li key={item.major.toString()}>
+                        educationArr.map((item, index) => {
+                            return <li key={index}>
                                 <div className={["content",slideToBottom ? "slideToBottom" : null].join(' ')}>
                                     <h6>
                                         <FormattedMessage id="component.education.title.time" />:<time>{item.time}</time>

@@ -56,7 +56,6 @@ function App() {
                 <a className="logo" href="/">
                   <img src={Logo} className="app-logo" alt="logo" />
                 </a>
-
                 <p className="signature">{signature}</p>
               </div>
 

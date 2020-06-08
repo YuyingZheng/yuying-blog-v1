@@ -38,13 +38,21 @@ const Header = ({ locale,setLocale }) => {
     })
 
     const scrollToAnchor = (anchorName) => {
-
         if (anchorName) {
             let anchorElement = document.getElementById(anchorName)
             if (anchorElement) { anchorElement.scrollIntoView({ block: 'start',behavior: 'smooth' }) }
-
-
         }
+    }
+
+    const switchActiveNav = (item) =>{
+        scrollToAnchor(item.id)
+        setMenuActive(!meunAcitve)
+    }
+
+    const switchLang = function(e) {
+        e.preventDefault();
+        locale = locale === 'zh' ? 'en' : 'zh';
+        setMenuActive(!meunAcitve)
     }
 
     return (
@@ -70,7 +78,7 @@ const Header = ({ locale,setLocale }) => {
 
                     <nav className="nav">
                         {navArr.map((item,index) => {
-                            return <Link href={item.href} key={item.label.toString()}>
+                            return <Link href={item.href} key={index}>
                                 <a onClick={() => scrollToAnchor(item.id)}>{item.label}</a>
                             </Link>
                         })}
@@ -100,18 +108,17 @@ const Header = ({ locale,setLocale }) => {
                 <div className="layer-content">
                     <div className="nav-menu">
                         {navArr.map((item,index) => {
-                            return <Link href={item.href} key={item.label.toString()}>
-                                <a onClick={() => scrollToAnchor(item.id)}>{item.label}</a>
+                            return <Link href={item.href} key={item.id}>
+                                <a onClick={() => switchActiveNav(item)}>{item.label}</a>
                             </Link>
                         })}
                     </div>
 
                     <p className="mobile-lang-switch">
                         <a className="lang-switch"
-                            onClick={e => {
-                                e.preventDefault();
-                                setLocale(locale === 'zh' ? 'en' : 'zh')
-                            }}>
+                            onClick={e => 
+                                switchLang(e)
+                            }>
                             <img src={LangIcon} alt="" className="lang-pic" />
                             {locale == 'zh' ? <span className="zh">中文</span> : <span className="en">en</span>}
                         </a>

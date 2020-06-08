@@ -71,9 +71,9 @@ const Footer = () => {
                     <ul className="personal-text">
 
                         {
-                            contactInfo.map(item => {
+                            contactInfo.map((item, index) => {
                                 return (
-                                    <li className="icon-item" key={item.title.toString()}>
+                                    <li className="icon-item" key={index}>
                                         <h6 className="title">{item.title}</h6>
                                         <div className="desc"><span className="icon icon-phone"><img src={item.icon} alt="" title={item.desc} /></span><span className="text">{item.desc}</span></div>
                                     </li>)
@@ -87,9 +87,9 @@ const Footer = () => {
                     <span className="text"><FormattedMessage id="component.contact.copyright" /></span>
                     <ul className="social-icons">
                         {
-                            socialIcons.map(item => {
+                            socialIcons.map((item, index) => {
                                 return (
-                                    <li key={item.name.toString()}>
+                                    <li key={index}>
                                         <a className="icon icon-twitter" onClick={goPage.bind(this,item.url)}>
                                             <img src={item.icon} alt="" title={item.name} />
                                         </a>

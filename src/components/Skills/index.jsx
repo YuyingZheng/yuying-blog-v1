@@ -42,9 +42,9 @@ const Skills = () => {
         <div className="skills-wrap section clearfix" id="skills-wrap">
             <h2 className="sub-title"> <FormattedMessage id="component.skills.title" /></h2>
             <ul className="skills global-width clearfix">
-                {skillArr.map(item => {
+                {skillArr.map((item, index) => {
                     return (
-                        <li key={item.name.toString()}  className={["skill-item",slideToLeft ? "slideToLeft" : null ].join(' ')}>
+                        <li key={index}  className={["skill-item",slideToLeft ? "slideToLeft" : null ].join(' ')}>
                             <p className="img-wrap">
                                 <span className="icon icon-html">
                                     <img src={item.icon} alt={item.desc} />

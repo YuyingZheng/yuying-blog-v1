@@ -133,18 +133,18 @@ body,
 
 @keyframes animation-spinner-line {
 0% {
-   width: 10%;
+   width: 0%;
 }
 30% {
     width: 30%;
 }
 60% {
-    width: 80%;
+    width: 60%;
 }
 80% {
-    width: 100%;
+    width: 80%;
 }
 100% {
-    width: 0;
+    width: 100%;
 }
 }
