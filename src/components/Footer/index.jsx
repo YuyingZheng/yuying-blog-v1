@@ -89,7 +89,7 @@ const Footer = () => {
                             socialIcons.map((item, index) => {
                                 return (
                                     <li key={index}>
-                                        <a className="icon icon-twitter" onClick={goPage.bind(this,item.url)} href="javascript:;">
+                                        <a className="icon icon-twitter" onClick={goPage.bind(this,item.url)}>
                                             <img src={item.icon} alt="" title={item.name} />
                                         </a>
                                     </li>
