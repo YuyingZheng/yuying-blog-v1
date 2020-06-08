@@ -49,9 +49,9 @@ const Education = () => {
                             return <li key={index}>
                                 <div className={["content",slideToBottom ? "slideToBottom" : null].join(' ')}>
                                     <h6>
-                                        <FormattedMessage id="component.education.title.time" />:<time>{item.time}</time>
+                                        <FormattedMessage id="component.education.title.time" />: <time>{item.time}</time>
                                     </h6>
-                                    <p><FormattedMessage id="component.education.title.school" />:<span>{item.school}</span></p>
+                                    <p><FormattedMessage id="component.education.title.school" />: <span>{item.school}</span></p>
                                     <p className="mt10"><FormattedMessage id="component.education.title.major" />: <span>{item.major}</span></p>
                                 </div>
                             </li>

@@ -49,9 +49,11 @@ const Header = ({ locale,setLocale }) => {
         setMenuActive(!meunAcitve)
     }
 
-    const switchLang = function(e) {
+    const switchLang = function(e, locale) {
         e.preventDefault();
-        locale = locale === 'zh' ? 'en' : 'zh';
+
+        setLocale(locale === 'zh' ? 'en' : 'zh')
+ 
         setMenuActive(!meunAcitve)
     }
 
@@ -117,7 +119,7 @@ const Header = ({ locale,setLocale }) => {
                     <p className="mobile-lang-switch">
                         <a className="lang-switch"
                             onClick={e => 
-                                switchLang(e)
+                                switchLang(e, locale)
                             }>
                             <img src={LangIcon} alt="" className="lang-pic" />
                             {locale == 'zh' ? <span className="zh">中文</span> : <span className="en">en</span>}
