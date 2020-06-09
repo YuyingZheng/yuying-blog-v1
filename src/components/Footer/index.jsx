@@ -4,20 +4,21 @@ import facebookIcon from './images/facebook.svg'
 import twitterIcon from './images/twitter.svg'
 import gitIcon from './images/git.svg'
 import qqIcon from './images/qq.svg'
-import wechatIcon from './images/wechat.svg'
+// import wechatIcon from './images/wechat.svg'
 import phoneIcon from './images/phone.svg'
 import svgIcon from './images/email.svg'
 import addressIcon from './images/address.svg'
+import weiboIcon from './images/weibo.svg'
 import personalImg from './images/yy-02.png'
 import { FormattedMessage } from 'react-intl';
 
 
 const socialIcons = [
-    { name: 'twitter',icon: twitterIcon,desc: 'twitter',url: 'https://twitter.com' },
-    { name: 'facebook',icon: facebookIcon,desc: 'facebook',url: "https://www.facebook.com/" },
-    { name: 'git',icon: gitIcon,desc: 'git',url: "https://github.com/" },
-    { name: 'qq',icon: qqIcon,desc: 'qq' },
-    { name: 'wechat',icon: wechatIcon,desc: 'wechat' }
+    { name: 'twitter',icon: twitterIcon,desc: 'twitter',url: 'https://twitter.com/Jady59023584' },
+    { name: 'facebook',icon: facebookIcon,desc: 'facebook',url: "https://www.facebook.com/jady.jady.311056" },
+    { name: 'git',icon: gitIcon,desc: 'github',url: "https://github.com/YuyingZheng" },
+    { name: 'qq',icon: qqIcon,desc: 'qq', url: "https://tim.qq.com/" },
+    { name: 'weibo',icon: weiboIcon,desc: 'weibo', url: 'https://weibo.com/3042725611/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1'}
 ]
 
 const contactInfo = [

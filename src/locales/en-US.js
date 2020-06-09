@@ -29,6 +29,11 @@ const en_US = {
     'component.contact.email': '719982185@qq.com',
     'component.contact.address': 'Xiamen Fujian Province',
     'component.contact.copyright': 'Jady©2020. All rights reserved',
+    'component.skills.jsFramework': 'JS FRAMEWORK',
+    'component.skills.autoBuildTools': 'Automated Build Tools',
+    'component.skills.codeManagementTools': 'Code Management Tools',
+    'component.skills.drawTools': 'Draw Tools',
+    'component.skills.developmentMode': 'Development Mode',
 }
 
 export default en_US;

@@ -1,5 +1,5 @@
 const zh_CN = {
-    'component.header.signature': '只要面对着阳光努力向上，日子就会变得简单而美好',
+    'component.header.signature': '只要向着阳光努力生长，日子就会变得简单而美好',
     'component.nav.label.home': '首页',
     'component.nav.label.career': '职业历程',
     'component.nav.label.skills': '技能特长',
@@ -28,6 +28,11 @@ const zh_CN = {
     'component.contact.email': '719982185@qq.com',
     'component.contact.address': '福建厦门',
     'component.contact.copyright': '郑钰莹©2020. 版权所有',
+    'component.skills.jsFramework': 'JS 框架',
+    'component.skills.autoBuildTools': '自动化构建工具',
+    'component.skills.codeManagementTools': '代码管理工具',
+    'component.skills.drawTools': '绘图工具',
+    'component.skills.developmentMode': '开发模式',
 }
 
 

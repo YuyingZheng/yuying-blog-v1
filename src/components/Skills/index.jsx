@@ -14,11 +14,11 @@ const skillArr = [
     { name: 'HTML',icon: htmlIcon,desc: 'html、 html5' },
     { name: 'CSS',icon: cssIcon,desc: 'css2、 css3、 scss、less' },
     { name: 'JS',icon: jsIcon,desc: 'JS、 ES6' },
-    { name: 'JS Framework ',icon: frameworkIcon,desc: 'Vue, Avalon、 Jquery、 React、 Element、Ant Design UI' },
-    { name: 'Automated Build Tools',icon: webpackIcon,desc: 'Webpack、 Gulp、Grunt' },
-    { name: 'Code Management Tools',icon: gitIcon,desc: 'Git、SVN' },
-    { name: 'Draw Tools',icon: axureIcon,desc: 'Axure、PS' },
-    { name: 'Development Mode',icon: scrumIcon,desc: 'Scrum、WaterFall' }
+    { name: <FormattedMessage id="component.skills.jsFramework" />,icon: frameworkIcon,desc: 'Vue, Avalon、 Jquery、 React、 Element、Ant Design UI' },
+    { name: <FormattedMessage id="component.skills.autoBuildTools" />,icon: webpackIcon,desc: 'Webpack、 Gulp、Grunt' },
+    { name: <FormattedMessage id="component.skills.codeManagementTools" />,icon: gitIcon,desc: 'Git、SVN' },
+    { name: <FormattedMessage id="component.skills.drawTools" />,icon: axureIcon,desc: 'Axure、PS' },
+    { name: <FormattedMessage id="component.skills.developmentMode" />,icon: scrumIcon,desc: 'Scrum、WaterFall' }
 ]
 
 const Skills = () => {

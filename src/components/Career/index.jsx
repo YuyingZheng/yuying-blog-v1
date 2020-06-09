@@ -24,6 +24,10 @@ const Career = () => {
             }
         
             window.addEventListener('scroll',bindScroll);
+
+            if(window.screen.width < 990) {
+                setSlideToLeft(true)
+            }
         })
   
     return (
